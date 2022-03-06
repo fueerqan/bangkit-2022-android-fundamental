@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import com.furqan.androidfundamental.R
+import com.furqan.androidfundamental.intent.model.SecondModel
 
 class FirstActivity : AppCompatActivity() {
 
@@ -24,10 +25,19 @@ class FirstActivity : AppCompatActivity() {
         btnGoToSecond = findViewById(R.id.btn_go_to_second)
 
         btnGoToSecond.setOnClickListener {
+            val data = SecondModel(
+                title = etTitle.text.toString(),
+                subtitle = etSubtitle.text.toString(),
+                description = etDescription.text.toString()
+            )
             val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra(SecondActivity.EXTRA_TITLE, etTitle.text.toString())
-            intent.putExtra(SecondActivity.EXTRA_SUBTITLE, etSubtitle.text.toString())
-            intent.putExtra(SecondActivity.EXTRA_DESCRIPTION, etDescription.text.toString())
+
+//            intent.putExtra(SecondActivity.EXTRA_TITLE, etTitle.text.toString())
+//            intent.putExtra(SecondActivity.EXTRA_SUBTITLE, etSubtitle.text.toString())
+//            intent.putExtra(SecondActivity.EXTRA_DESCRIPTION, etDescription.text.toString())
+
+            intent.putExtra(SecondActivity.EXTRA_DATA, data)
+
             startActivity(intent)
         }
 

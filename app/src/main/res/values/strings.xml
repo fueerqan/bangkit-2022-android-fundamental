@@ -4,4 +4,5 @@
     <string name="go_to_second_label">Go To Second Activity</string>
     <string name="second_activity_label">This is the Second Activity</string>
     <string name="intent_label">Intent</string>
+    <string name="share_some_text_label">Share Some Text</string>
 </resources>

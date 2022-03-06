@@ -30,7 +30,7 @@ class ListMessageFragment : Fragment() {
         with(containerListMessage) {
             for (message in MessageHelper.LIST_MESSAGE) {
                 val childView =
-                    LayoutInflater.from(this.context).inflate(R.layout.item_message, this)
+                    LayoutInflater.from(this.context).inflate(R.layout.item_message, null)
 
                 val tvName = childView.findViewById<AppCompatTextView>(R.id.tv_sender_name)
                 val tvLastMessage =

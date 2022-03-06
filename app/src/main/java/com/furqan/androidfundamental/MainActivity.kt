@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.furqan.androidfundamental.fragment.FragmentActivity
 import com.furqan.androidfundamental.intent.FirstActivity
+import com.furqan.androidfundamental.navigation.NavigationActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,12 @@ class MainActivity : AppCompatActivity() {
         findViewById<AppCompatButton>(R.id.btn_go_to_fragment).setOnClickListener {
             startActivity(
                 Intent(this, FragmentActivity::class.java)
+            )
+        }
+
+        findViewById<AppCompatButton>(R.id.btn_go_to_navigation).setOnClickListener {
+            startActivity(
+                Intent(this, NavigationActivity::class.java)
             )
         }
     }

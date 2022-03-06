@@ -8,14 +8,16 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.furqan.androidfundamental.R
+import com.furqan.androidfundamental.databinding.FragmentListMessageBinding
 import com.furqan.androidfundamental.fragment.adapter.ListMessageAdapter
 import com.furqan.androidfundamental.fragment.fragment.ListMessageFragment
 import com.furqan.androidfundamental.fragment.util.MessageHelper
 
 class ListMessageFragment : Fragment() {
 
-    private lateinit var rvListMessage: RecyclerView
+    private var _binding: FragmentListMessageBinding? = null
+    private val binding: FragmentListMessageBinding
+        get() = _binding!!
 
     private val listener: ListMessageFragment.ListMessageActionListener =
         object : ListMessageFragment.ListMessageActionListener {
@@ -33,17 +35,22 @@ class ListMessageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_list_message, container, false)
-        rvListMessage = view.findViewById(R.id.rv_list_message)
-        return view
+        _binding = FragmentListMessageBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = ListMessageAdapter(MessageHelper.LIST_MESSAGE, listener)
-        rvListMessage.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        rvListMessage.adapter = adapter
+        binding.rvListMessage.layoutManager =
+            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        binding.rvListMessage.adapter = adapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

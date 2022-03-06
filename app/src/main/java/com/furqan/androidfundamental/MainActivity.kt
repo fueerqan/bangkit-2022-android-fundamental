@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
 
-            btnGoToFragment.setOnClickListener {
+            btnGoToNavigation.setOnClickListener {
                 startActivity(
                     Intent(root.context, NavigationActivity::class.java)
                 )

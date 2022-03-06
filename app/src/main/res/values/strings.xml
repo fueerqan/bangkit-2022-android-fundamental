@@ -5,4 +5,7 @@
     <string name="second_activity_label">This is the Second Activity</string>
     <string name="intent_label">Intent</string>
     <string name="share_some_text_label">Share Some Text</string>
+    <string name="input_title_hint">Input title</string>
+    <string name="input_subtitle_hint">Input subtitle</string>
+    <string name="input_description_hint">Input Description</string>
 </resources>

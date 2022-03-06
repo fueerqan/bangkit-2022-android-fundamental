@@ -14,7 +14,7 @@
         android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="@string/second_activity_label"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatTextView

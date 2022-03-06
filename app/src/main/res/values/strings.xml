@@ -8,4 +8,5 @@
     <string name="input_title_hint">Input title</string>
     <string name="input_subtitle_hint">Input subtitle</string>
     <string name="input_description_hint">Input Description</string>
+    <string name="fragment_label">Fragment</string>
 </resources>

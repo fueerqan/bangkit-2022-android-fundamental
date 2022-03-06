@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_first.xml" value="0.15364583333333334" />
+        <entry key="app/src/main/res/layout/activity_fragment.xml" value="0.24230072463768115" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_second2.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout/fragment_detail_message.xml" value="0.24230072463768115" />
+        <entry key="app/src/main/res/layout/fragment_list_message.xml" value="0.24230072463768115" />
+        <entry key="app/src/main/res/layout/item_message.xml" value="0.24230072463768115" />
       </map>
     </option>
   </component>

@@ -10,8 +10,7 @@
         android:id="@+id/tv_detail_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is Detail Message"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:textSize="18sp"
+        tools:text="This is Detail Message" />
 
 </LinearLayout>

@@ -27,9 +27,10 @@ class DetailMessageFragment : Fragment(R.layout.fragment_detail_message) {
 
                 if (data != null) {
                     textView.text = """Sender Name : ${data.senderName}
-                        Sender Id : ${data.senderId}
-                        Sender Last Message : 
-                        ${data.senderLastMessage}
+                        
+Sender Id : ${data.senderId}
+
+Sender Last Message : ${data.senderLastMessage}
                     """.trimIndent()
                 } else {
                     textView.text = "Message with id $id not found"

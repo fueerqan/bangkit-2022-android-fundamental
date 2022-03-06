@@ -26,6 +26,7 @@ class FragmentActivity : AppCompatActivity() {
                 supportFragmentManager.commit {
                     setReorderingAllowed(true)
                     replace(R.id.fragment_container_view, detailFragment, TAG_LIST_FRAGMENT)
+                    addToBackStack(null)
                 }
             }
         }

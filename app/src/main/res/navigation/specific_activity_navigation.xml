@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/specific_activity_navigation"
+    app:startDestination="@id/listMessageFragment">
+
+    <fragment
+        android:id="@+id/listMessageFragment"
+        android:name="com.furqan.androidfundamental.navigation.fragment.ListMessageFragment"
+        android:label="ListMessageFragment" >
+        <action
+            android:id="@+id/action_listMessageFragment_to_detailMessageFragment"
+            app:destination="@id/detailMessageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailMessageFragment"
+        android:name="com.furqan.androidfundamental.navigation.fragment.DetailMessageFragment"
+        android:label="DetailMessageFragment" >
+        <argument
+            android:name="senderId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

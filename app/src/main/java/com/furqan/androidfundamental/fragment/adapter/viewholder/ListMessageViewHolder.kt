@@ -11,7 +11,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 class ListMessageViewHolder(
     view: View,
-    val listener: ListMessageFragment.ListMessageActionListener
+    private val listener: ListMessageFragment.ListMessageActionListener?
 ) : RecyclerView.ViewHolder(view) {
 
     private var tvSenderName: AppCompatTextView = itemView.findViewById(R.id.tv_sender_name)
@@ -29,7 +29,7 @@ class ListMessageViewHolder(
             .into(ivSender)
 
         itemView.setOnClickListener {
-            listener.onItemClicked(element.senderId)
+            listener?.onItemClicked(element.senderId)
         }
     }
 

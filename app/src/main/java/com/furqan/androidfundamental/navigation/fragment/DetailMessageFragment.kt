@@ -5,10 +5,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.furqan.androidfundamental.R
 import com.furqan.androidfundamental.fragment.util.MessageHelper
 
 class DetailMessageFragment : Fragment(R.layout.fragment_detail_message) {
+
+    val args: DetailMessageFragmentArgs by navArgs()
 
     private lateinit var textView: AppCompatTextView
 
@@ -19,22 +22,19 @@ class DetailMessageFragment : Fragment(R.layout.fragment_detail_message) {
         getView()?.let {
             textView = it.findViewById(R.id.tv_detail_message)
 
-            arguments?.let { args ->
-                val id = args.getInt(ARG_SENDER_ID)
-                val data = MessageHelper.LIST_MESSAGE.firstOrNull { message ->
-                    message.senderId == id
-                }
+            val data = MessageHelper.LIST_MESSAGE.firstOrNull { message ->
+                message.senderId == args.senderId
+            }
 
-                if (data != null) {
-                    textView.text = """Sender Name : ${data.senderName}
+            if (data != null) {
+                textView.text = """Sender Name : ${data.senderName}
                         
 Sender Id : ${data.senderId}
 
 Sender Last Message : ${data.senderLastMessage}
                     """.trimIndent()
-                } else {
-                    textView.text = "Message with id $id not found"
-                }
+            } else {
+                textView.text = "Message with id $id not found"
             }
         }
     }

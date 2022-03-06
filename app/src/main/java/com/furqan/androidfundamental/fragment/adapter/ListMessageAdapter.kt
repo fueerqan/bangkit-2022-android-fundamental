@@ -10,7 +10,7 @@ import com.furqan.androidfundamental.fragment.model.MessageModel
 
 class ListMessageAdapter(
     private val listItems: MutableList<MessageModel>,
-    private val listener: ListMessageFragment.ListMessageActionListener
+    private val listener: ListMessageFragment.ListMessageActionListener?
 ) :
     RecyclerView.Adapter<ListMessageViewHolder>() {
 

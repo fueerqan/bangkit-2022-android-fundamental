@@ -3,32 +3,37 @@ package com.furqan.androidfundamental
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
+import com.furqan.androidfundamental.databinding.ActivityMainBinding
 import com.furqan.androidfundamental.fragment.FragmentActivity
 import com.furqan.androidfundamental.intent.FirstActivity
 import com.furqan.androidfundamental.navigation.NavigationActivity
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        with(binding) {
+            setContentView(root)
 
-        findViewById<AppCompatButton>(R.id.btn_go_to_intent).setOnClickListener {
-            startActivity(
-                Intent(this, FirstActivity::class.java)
-            )
-        }
+            btnGoToIntent.setOnClickListener {
+                startActivity(
+                    Intent(root.context, FirstActivity::class.java)
+                )
+            }
 
-        findViewById<AppCompatButton>(R.id.btn_go_to_fragment).setOnClickListener {
-            startActivity(
-                Intent(this, FragmentActivity::class.java)
-            )
-        }
+            btnGoToFragment.setOnClickListener {
+                startActivity(
+                    Intent(root.context, FragmentActivity::class.java)
+                )
+            }
 
-        findViewById<AppCompatButton>(R.id.btn_go_to_navigation).setOnClickListener {
-            startActivity(
-                Intent(this, NavigationActivity::class.java)
-            )
+            btnGoToFragment.setOnClickListener {
+                startActivity(
+                    Intent(root.context, NavigationActivity::class.java)
+                )
+            }
         }
     }
 }

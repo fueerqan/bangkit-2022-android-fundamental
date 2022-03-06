@@ -43,4 +43,8 @@ class ListMessageFragment : Fragment() {
         }
     }
 
+    interface ListMessageActionListener {
+        fun onItemClicked(senderId: Int, senderName: String)
+    }
+
 }

@@ -13,6 +13,7 @@ import com.furqan.androidfundamental.fragment.util.MessageHelper
 class ListMessageFragment : Fragment() {
 
     private lateinit var containerListMessage: LinearLayout
+    var listener: ListMessageActionListener? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,13 +39,17 @@ class ListMessageFragment : Fragment() {
                 tvName.text = message.senderName
                 tvLastMessage.text = message.senderLastMessage
 
+                childView.setOnClickListener {
+                    listener?.onItemClicked(message.senderId)
+                }
+
                 addView(childView)
             }
         }
     }
 
     interface ListMessageActionListener {
-        fun onItemClicked(senderId: Int, senderName: String)
+        fun onItemClicked(senderId: Int)
     }
 
 }

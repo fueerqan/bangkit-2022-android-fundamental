@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Android Fundamental</string>
+    <string name="first_activity_label">This is the First Activity</string>
+    <string name="go_to_second_label">Go To Second Activity</string>
+    <string name="second_activity_label">This is the Second Activity</string>
+    <string name="intent_label">Intent</string>
 </resources>

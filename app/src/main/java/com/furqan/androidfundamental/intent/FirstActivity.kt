@@ -17,6 +17,7 @@ class FirstActivity : AppCompatActivity() {
     private lateinit var etSubtitle: AppCompatEditText
     private lateinit var etDescription: AppCompatEditText
     private lateinit var btnGoToSecond: AppCompatButton
+    private lateinit var btnShare: AppCompatButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,7 @@ class FirstActivity : AppCompatActivity() {
         etSubtitle = findViewById(R.id.et_subtitle)
         etDescription = findViewById(R.id.et_description)
         btnGoToSecond = findViewById(R.id.btn_go_to_second)
+        btnShare = findViewById(R.id.btn_go_share)
 
         btnGoToSecond.setOnClickListener {
             // Option 1
@@ -54,6 +56,15 @@ class FirstActivity : AppCompatActivity() {
 
 //            // Option 4
 //            startActivity(Intent(this, SecondActivity::class.java))
+        }
+
+        btnShare.setOnClickListener {
+            val intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                type = "text/plain"
+                putExtra(Intent.EXTRA_TEXT, etTitle.text.toString())
+            }
+            startActivity(intent)
         }
     }
 }
